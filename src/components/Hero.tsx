@@ -16,8 +16,27 @@ export default function Hero() {
                 opacity: 0,
                 duration: 1,
                 ease: "power4.out",
-                stagger: 0.05,     // التتابع السحري اللي هيخلي الحروف تطلع ورا بعضها
+                stagger: 0.1,     // التتابع السحري اللي هيخلي الحروف تطلع ورا بعضها
             });
+
+            gsap.from(".image-animate", {
+                x:400,
+                duration:1,
+                ease: "power4.out",
+            })
+
+            gsap.timeline().from(".word-animate", {
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                ease: "power4.out",
+                stagger: 0.05,
+            }).from(".button-animate", {
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                ease: "power4.out"
+            })
 
         }, containerRef); // ربط الـ scope هنا
 
@@ -37,15 +56,15 @@ export default function Hero() {
             </h1>
             
             {/* تأكد من ضبط الـ z-index عشان الصورة متغطيش على حركة الحروف بشكل كامل */}
-            <div className="absolute z-2 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-screen h-screen flex flex-col items-center justify-center pointer-events-none">
-                <Image src="/imgs/p2.png" alt="p2" width={1150} height={1150} priority />
+            <div className="absolute image-animate z-2 left-1/2 -translate-x-1/2 bottom-0 w-screen h-screen flex flex-col items-center justify-center pointer-events-none">
+                <Image src="/imgs/p2.png" alt="p2" width={1000} height={1000} priority />
             </div>
             
             <div className="z-3 absolute left-1/2 -translate-x-1/2 bottom-10 flex flex-col gap-6 justify-center items-center max-w-[600px]">
                 <p className="text-white text-xl text-center font-semibold">
-                    The fate of the Island's at stake in Fortnite Battle Royale Chapter 4 Season 4, and thievery's the last resort. Are you in?
+                    {"The fate of the Island's at stake in Fortnite Battle Royale Chapter 4 Season 4, and thievery's the last resort. Are you in?".split(" ").map((word, i) => <span className="word-animate inline-block" key={i}>{"\u00A0" +  word} </span>)}
                 </p>
-                <button className="bg-yellow-300 uppercase fortnite w-50 h-13 text-3xl -skew-x-12 cursor-pointer hover:bg-yellow-400 transition-colors">
+                <button className="bg-yellow-300 uppercase button-animate fortnite w-50 h-13 text-3xl -skew-x-12 cursor-pointer hover:bg-yellow-400 transition-colors">
                     LEARN MORE
                 </button>
             </div>
