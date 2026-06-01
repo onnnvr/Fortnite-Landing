@@ -63,7 +63,7 @@ export default function News() {
     }, [])
 
     return (
-        <section className="h-dvh w-screen overflow-hidden bg-black py-20 container mx-auto p-40">
+        <section className="h-dvh w-screen overflow-hidden bg-black py-20 container mx-auto p-40 bg-black">
             <h2 ref={headingRef} className="fortnite uppercase text-9xl text-white w-full text-center ">
                 {"FORTNITE NEWS".split(" ").map((word, i) => (
                     <span className="inline-block" key={i}>
