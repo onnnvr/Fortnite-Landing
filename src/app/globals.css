@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "fortnite";
+  src: url("/fonts/fortnite.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "fortnite";
+  src: url("/fonts/fortnite.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+.fortnite {
+  font-family: "fortnite"
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
