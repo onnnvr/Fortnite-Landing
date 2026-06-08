@@ -12,7 +12,7 @@ export default function Hero() {
         const ctx = gsap.context(() => {
             
             gsap.from(".char-animate", {
-                y: 200,            // 200 كافية جداً للظهور من الأسفل بناءً على حجم الخط
+                y: 200,          
                 opacity: 0,
                 duration: 1,
                 ease: "power4.out",
