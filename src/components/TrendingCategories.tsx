@@ -8,6 +8,7 @@ import { useEffect, useRef } from "react";
 export default function TrendingCategories() {
     const headingRef = useRef<HTMLHeadingElement | null>(null);
     const paragraphRef = useRef<HTMLParagraphElement | null>(null);
+    const sectionRef = useRef<HTMLDivElement | null>(null);
 
     
     useEffect(() => {
@@ -40,6 +41,19 @@ export default function TrendingCategories() {
                 }
             })
 
+            gsap.to(".slide-x", {
+                x: "-100%",
+                duration: 20,
+                ease: "linear",
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: "top bottom",
+                    end: "+=100",
+                    pin: true,
+                    scrub: true,
+                }
+            })
+
 
             
         });
@@ -47,7 +61,7 @@ export default function TrendingCategories() {
     }, [])
 
     return (
-        <section className="h-dvh w-screen overflow-hidden bg-black py-20">
+        <section className="h-dvh w-screen overflow-hidden bg-black py-20" ref={sectionRef}>
             <h2 ref={headingRef} className="fortnite uppercase text-9xl text-white w-full text-center ">
                 {"TRENDING CATEGORIES".split(" ").map((word, i) => (
                     <span className="inline-block" key={i}>
