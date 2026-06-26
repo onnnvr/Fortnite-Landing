@@ -3,14 +3,7 @@
 @font-face {
   font-family: "fortnite";
   src: url("/fonts/fortnite.otf") format("opentype");
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "fortnite";
-  src: url("/fonts/fortnite.otf") format("opentype");
-  font-weight: 700;
+  font-weight: 700, 900;
   font-style: normal;
 }
 

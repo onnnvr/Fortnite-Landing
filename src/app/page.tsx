@@ -1,16 +1,34 @@
+"use client"
+
 import Hero from "@/components/Hero";
 import LastSection from "@/components/LastSection";
 import News from "@/components/News";
 import TrendingCategories from "@/components/TrendingCategories";
-import Image from "next/image";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollSmoother } from "gsap/all";
+gsap.registerPlugin(useGSAP, ScrollSmoother)
 
 export default function Home() {
+
+  useGSAP(() => {
+    ScrollSmoother.create({
+      smooth: 2,
+      wrapper: "#smooth-wrapper",
+      content: "#smooth-content",
+    });
+  })
+
   return (
     <main className="overflow-hidden">
-      <Hero />
-      <News />
-      <TrendingCategories />
-      <LastSection />
+      <div id="smooth-wrapper">
+        <div id="smooth-content">
+          <Hero />
+          <News />
+          <TrendingCategories />
+          <LastSection />
+        </div>
+      </div>
     </main>
   );
 }

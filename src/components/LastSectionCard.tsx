@@ -25,7 +25,7 @@ export default function LastSectionCard({image, title, paragraph, button, classN
                     trigger: cardRef.current,
                     start: "top bottom",
                     end: "top bottom",
-                    markers: true,
+                    // markers: true,
                     toggleActions: "play none none reverse",
                 }
             });
@@ -37,7 +37,7 @@ export default function LastSectionCard({image, title, paragraph, button, classN
                     trigger: cardRef.current,
                     start: "top bottom",
                     end: "top bottom",
-                    markers: true,
+                    // markers: true,
                     toggleActions: "play none none reverse",
                 }
             })
@@ -51,7 +51,7 @@ export default function LastSectionCard({image, title, paragraph, button, classN
                     trigger: cardRef.current,
                     start: "top bottom",
                     end: "top bottom",
-                    markers: true,
+                    // markers: true,
                     toggleActions: "play none none reverse",
                 }
             })

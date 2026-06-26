@@ -3,25 +3,24 @@
 import Image from "next/image";
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 export default function Hero() {
     const containerRef = useRef<HTMLHeadingElement | null>(null);
 
-    useEffect(() => {
-        // استخدام الـ scope جوه الـ context بيخلي GSAP يدور على الكلاسات جوه الـ container ده بس
-        const ctx = gsap.context(() => {
+    useGSAP(() => {
             
             gsap.from(".char-animate", {
                 y: 200,          
                 opacity: 0,
-                duration: 1,
+                duration: 2,
                 ease: "power4.out",
-                stagger: 0.1,     // التتابع السحري اللي هيخلي الحروف تطلع ورا بعضها
+                stagger: 0.1, 
             });
 
             gsap.from(".image-animate", {
-                x:400,
-                duration:1,
+                x:1000,
+                duration:2,
                 ease: "power4.out",
             })
 
@@ -34,30 +33,25 @@ export default function Hero() {
             }).from(".button-animate", {
                 y: 50,
                 opacity: 0,
-                duration: 1,
+                duration: 0.5,
                 ease: "power4.out"
             })
-
-        }, containerRef); // ربط الـ scope هنا
-
-        return () => ctx.revert();
-    }, []);
+    }, {scope : containerRef});
 
     return (
         <section ref={containerRef} className="relative overflow-hidden h-dvh w-screen bg-linear-to-br from-indigo-800 to-purple-900">
-            {/* شيلنا overflow-hidden من الـ h1 عشان الحروف تبان وهي طالعة من تحت */}
             <h1 className="absolute flex left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 fortnite uppercase text-[26vw] opacity-40 text-white font-extrabold select-none pointer-events-none z-1">
                 {"FORTNITE".split("").map((char, i) => (
-                    // هنا بنلف كل حرف جوه span واخد overflow-hidden خاص بيه لو عايز تأثير القطع، أو سيبه كدة للحركة الحرة
                     <span className="inline-block char-animate" key={i}>
                         {char}
                     </span>
                 ))}
             </h1>
             
-            {/* تأكد من ضبط الـ z-index عشان الصورة متغطيش على حركة الحروف بشكل كامل */}
-            <div className="absolute image-animate z-2 left-1/2 -translate-x-1/2 bottom-0 w-screen h-screen flex flex-col items-center justify-center pointer-events-none">
-                <Image src="/imgs/p2.png" alt="p2" width={1000} height={1000} priority />
+            <div className="absolute image-animate z-2 left-1/2 -translate-x-1/2 bottom-0 w-screen flex flex-col items-center justify-center pointer-events-none">
+                <div className="relative overflow-hidden w-[60vw] h-[100vh]">
+                    <Image src="/imgs/p2.png" alt="p2" className="object-cover" fill />
+                </div>
             </div>
             
             <div className="z-3 absolute left-1/2 -translate-x-1/2 bottom-10 flex flex-col gap-6 justify-center items-center max-w-[600px]">
