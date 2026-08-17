@@ -58,9 +58,9 @@ export default function LastSectionCard({image, title, paragraph, button, classN
     }, { scope: cardRef })
     
     return (
-        <div ref={cardRef} className={`flex justify-between items-start w-full ${className}`}>
-            <div className="flex flex-col items-start gap-2  w-[43%] pb-10">
-                <h3 className="text-white text-7xl font-bold fortnite uppercase">{title?.split(" ").map((word, i) => (
+        <div ref={cardRef} className={`flex flex-col lg:flex-row justify-between items-center lg:items-start w-full ${className}`}>
+            <div className="flex flex-col items-center lg:items-start gap-2 lg:w-[43%] pb-10">
+                <h3 className="text-white text-6xl lg:text-7xl text-center font-bold fortnite uppercase">{title?.split(" ").map((word, i) => (
                         <span className="inline-block" key={i}>
                             {word.split("").map((char, y) => (
                                 <span className="inline-block char-animate" key={y}>{char}</span>
@@ -68,12 +68,12 @@ export default function LastSectionCard({image, title, paragraph, button, classN
                             {"\u00A0"}
                         </span>
                     ))}</h3>
-                <p className=" paragraph-animate text-white text-lg font-semibold max-w-[700px]">{paragraph}</p>
+                <p className=" paragraph-animate text-white text-lg text-center font-semibold lg:max-w-[700px]">{paragraph}</p>
                 <button className="bg-yellow-300 mt-3 uppercase button-animate fortnite w-50 h-13 text-3xl -skew-x-12 cursor-pointer hover:bg-yellow-400 transition-colors">
                     {button}
                 </button>
             </div>
-            <div className="rounded-2xl overflow-hidden w-[50%]">
+            <div className="rounded-2xl overflow-hidden lg:w-[50%]">
                 <Image className="image-animate" src={image} alt="p1" width={1100} height={800} />
             </div>
         </div>

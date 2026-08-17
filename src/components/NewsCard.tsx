@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function NewsCard({image, tag, paragraph}: {image: string, tag?: string, paragraph?: string}) {
     return (
-        <div className="w-[500px] newscard-animate h-[330px] relative overflow-hidden rounded-xl cursor-pointer">
+        <div className=" w-[95vw] mx-auto lg:w-[500px] newscard-animate h-[330px] relative overflow-hidden rounded-xl cursor-pointer">
             {/* Use Image with `fill` so it covers the card and `object-cover` to maintain aspect */}
             <Image src={image} alt={tag || "News Card Image"} fill className="object-cover" />
 

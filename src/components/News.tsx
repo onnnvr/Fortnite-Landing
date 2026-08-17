@@ -63,9 +63,9 @@ export default function News() {
     }, { scope: sectionRef })
 
     return (
-        <section ref={sectionRef} className="h-dvh w-screen overflow-hidden bg-black py-20 ">
+        <section ref={sectionRef} className="min-h-dvh w-screen overflow-hidden bg-black py-20 ">
             <div className="mx-auto container px-[2vw] leading-[18vh]">
-                <h2 ref={headingRef} className="fortnite uppercase text-[8vw] text-white w-full text-center ">
+                <h2 ref={headingRef} className="fortnite uppercase text-7xl lg:text-[8vw] text-white w-full text-center ">
                     {"FORTNITE NEWS".split(" ").map((word, i) => (
                         <span className="inline-block" key={i}>
                             {word.split("").map((char, y) => (
@@ -78,7 +78,7 @@ export default function News() {
                 <p className=" mb-10 w-full text-center text-lg paragraph-animate text-white font-semibold ">
                     Check out the latest news and updates about Fortnite
                 </p>
-                <div ref={cardsRef} className="mt-5 flex flex-row justify-between gap-5">
+                <div ref={cardsRef} className="mt-5 flex flex-col lg:flex-row justify-between gap-5">
                     <NewsCard image="/imgs/n1.jpg" tag="V26.30 UPDATE" paragraph="FORTNITEMARES 2023 DAWNS IN THE FORTNITE BATTLE ROYALE" />
                     <NewsCard image="/imgs/n2.jpg" tag="SEP 27, 2023" paragraph="UPCOMING FORTNITE PRICING ALIGNMENT IN - OCTOBER 2023" />
                     <NewsCard image="/imgs/n3.webp" tag="V26.20 UPDATE" paragraph="THE FORTNITE SAVE THE WORLD HOTFIX HOMEBASE STATUS REPORT" />
