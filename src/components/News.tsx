@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import NewsCard from "./NewsCard";
 import { useGSAP } from "@gsap/react";
 

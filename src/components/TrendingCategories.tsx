@@ -50,7 +50,7 @@ export default function TrendingCategories() {
             const tl = gsap.timeline({
                 scrollTrigger: {
                         trigger: sectionRef.current,
-                        markers: true,
+                        // markers: true,
                         start: "top top",
                         pin: true,
                         pinSpacing: true,
